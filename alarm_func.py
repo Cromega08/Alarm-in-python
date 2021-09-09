@@ -17,6 +17,11 @@ import re
 
 class checker():
 
+    """
+    Clase creadora de todos los archivos y carpetas al iniciar el sistema, asi como que no existan
+    errores en los archivos que puedan ocasionar problemas
+    """
+
     def __init__(self):
 
         self.current = p.cwd()
@@ -139,6 +144,10 @@ class checker():
                 year += 1
 
 class enter():
+    
+    """
+    Maneja todo lo relacionado con los inputs y que sigan un estandar seguro dentro del sistema
+    """
 
     def __init__(self, alarm, today, sound, preferences):
 
@@ -381,6 +390,10 @@ class enter():
 
 class handle():
 
+    """
+    Maneja lo relacionado con los archivos, modificarlos y moverlos
+    """
+
     def __init__(self, alarm, sound, preferences):
   
         self.alarm = alarm
@@ -486,6 +499,10 @@ class handle():
 
 class sounds():
 
+    """
+    Maneja todo lo relacionado con los archivos de sonido: Reproduccion y descarga
+    """
+
     def __init__(self, sound):
         
         self.sound = sound
@@ -567,6 +584,12 @@ class sounds():
 
 class Alarm():
 
+    """
+    Contiene los principales elementos de una alarma, activa una alarma si es la hora establecida
+    y programa en el sistema la execucion del script
+    N: Solo funciona en windows
+    """
+
     def __init__(self, current, today, alarm, sound, preferences):
 
         self.current = current
@@ -622,6 +645,11 @@ class Alarm():
             app.exec()
 
 class app():
+
+    """
+    Clase iniciadora de todo el codigo, contiene todo el sistema de interaccion con el usuario
+    y llama a las otras clases y funciones
+    """
 
     def __init__(self):
         
