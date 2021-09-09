@@ -1,7 +1,5 @@
-"""
-corrige errores
-Crear el ejecutable, añadirlo a las comprobaciones y aplicarlo al administrador de tareas
-"""
+#Aplicacion de alarma en python
+#Funciones
 
 from datetime import datetime as dt
 from pytube import YouTube as YT
@@ -300,7 +298,7 @@ class enter():
 
         if all(validate):
 
-
+            try:
                 
                 hour_new = self.replacer(" |/|,|-", ":", hr, "h")
                 delta_date = dt.strptime(date, "%d-%m-%Y") - self.today
@@ -328,7 +326,7 @@ class enter():
                         print("Parametros incorrectos, introduzcalos como se le indica")
                         self.enter_hours(date)
             
-            
+            except:
 
                 print("Ha ocurrido un error, por favor ingrese datos reales y siga los parametros")
                 self.enter_hours(date)
