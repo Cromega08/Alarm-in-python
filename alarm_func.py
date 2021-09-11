@@ -73,7 +73,7 @@ class checker():
 
                     for docs in files:
 
-                        if path.lower() in docs.lower():
+                        if path.lower() in docs.lower() and ".lnk".lower() not in docs.lower():
 
                             paths.append(rf"{root}\{docs}")
             
@@ -120,12 +120,10 @@ class checker():
         audio.download(output_path = self.sound_file, filename = f"{audio.default_filename}", timeout = 30)
         sound = sounds(self.sound_file)
         sound.convert(f"{self.sound_file}\{audio.default_filename}")
-        print("im here")
                     
         with open(self.preferences_file, "w", encoding = "utf-8") as doc:
 
             doc.write(f"{audio.default_filename[:-4]}.wav")
-            print("Here too")
 
         return True
     
@@ -600,7 +598,7 @@ class Alarm():
 
     def alarm_now(self):
 
-        with open(self.alarm_file, "r") as doc:
+        with open(self.alarm, "r") as doc:
 
             first_line = doc.readline(0)
             first_line.split(",")
